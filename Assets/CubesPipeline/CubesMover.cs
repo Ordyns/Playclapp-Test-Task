@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +14,12 @@ public class CubesMover : MonoBehaviour
 
     public void AddCube(Cube cube, float speed, float distance){
         MoveOperation moveOperation = new MoveOperation(cube, speed, distance);
+
+        if(distance == 0) {
+            OnOperationFinished(moveOperation);
+            return;
+        }
+
         moveOperation.Finished += OnOperationFinished;
         _moveOperations.AddLast(moveOperation);
     }
@@ -60,7 +65,7 @@ public class CubesMover : MonoBehaviour
 
             TargetObject = targetObject;
             _speed = speed;
-            _distance = distance; // TODO: axis selection
+            _distance = distance;
 
             _startPosition = targetObject.transform.position;
             _progress = 0;

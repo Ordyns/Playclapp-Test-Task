@@ -35,11 +35,17 @@ public class CubesPipelineViewModel
     }
 
     private void UpdateCubesMoverSettings(){
-        _distanceVisualizer.SetDistance(CubeDistance.Value);
         _cubesMover.SetSettings(CubeSpeed.Value, CubeDistance.Value);
+        PipelineSettingsUpdated();
     }
+
     private void UpdateCubeSpawnerSettings(){
-        _distanceVisualizer.SetDistance(CubeDistance.Value);
         _cubeSpawner.SetSpawnDelay(SpawnDelay.Value);
+        PipelineSettingsUpdated();
+    }
+
+    private void PipelineSettingsUpdated(){
+        _cubeSpawner.IsActive = CubeSpeed.Value > 0;
+        _distanceVisualizer.SetDistance(CubeDistance.Value);
     }
 }

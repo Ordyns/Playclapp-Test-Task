@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19815382, g: 0.4132871, b: 0.53174627, a: 1}
+  m_IndirectSpecularColor: {r: 0.16830026, g: 0.41211087, b: 0.55771136, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -575,16 +575,16 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1277,9 +1277,9 @@ MonoBehaviour:
     prefab: {fileID: 7700677308899698481, guid: 12707031c4aaac14892665acb42200c5,
       type: 3}
     parent: {fileID: 818711343}
-    minCapacity: 0
-    maxCapacity: 100
-    objectsCountOnStart: 0
+    minCapacity: 1
+    maxCapacity: 1000
+    objectsCountOnStart: 1
 --- !u!4 &818711343
 Transform:
   m_ObjectHideFlags: 0
@@ -2144,10 +2144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

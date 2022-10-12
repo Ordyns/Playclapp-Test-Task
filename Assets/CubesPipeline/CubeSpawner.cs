@@ -4,13 +4,15 @@ public class CubeSpawner : MonoBehaviour
 {
     public event System.Action<Cube> CubeSpawned;
 
+    public bool IsActive { get; set; }
+
     [SerializeField] private GameObjectPool<Cube> objectPool;
 
     private float _spawnDelay;
     private float _timeToNextSpawn;
 
     private void Update() {
-        if(gameObject.activeSelf && _spawnDelay > 0){
+        if(IsActive && _spawnDelay > 0){
             if(_timeToNextSpawn > 0){
                 _timeToNextSpawn -= Time.deltaTime;
             }
@@ -30,5 +32,6 @@ public class CubeSpawner : MonoBehaviour
 
     public void SetSpawnDelay(float delay){
         _spawnDelay = delay;
+        _timeToNextSpawn = 0;
     }
 }
