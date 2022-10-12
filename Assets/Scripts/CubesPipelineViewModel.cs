@@ -17,7 +17,7 @@ public class CubesPipelineViewModel : MonoBehaviour
     }
 
     private void OnCubeMoved(Cube cube){
-        Destroy(cube.gameObject);
+        cube.gameObject.SetActive(false);
     }
 
     private void OnCubeSpawned(Cube cube){

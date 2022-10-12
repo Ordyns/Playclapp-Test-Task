@@ -4,8 +4,7 @@ public class CubeSpawner : MonoBehaviour
 {
     public event System.Action<Cube> CubeSpawned;
 
-    [SerializeField] private Transform cubesParent;
-    [SerializeField] private Cube cubePrefab;
+    [SerializeField] private GameObjectPool<Cube> objectPool;
     [Space]
     private float _spawnDelay;
 
@@ -25,7 +24,8 @@ public class CubeSpawner : MonoBehaviour
     }
 
     private void Spawn(){
-        Cube cube = Instantiate(cubePrefab, cubesParent);
+        Cube cube = objectPool.Get();
+        cube.transform.position = Vector3.zero;
         CubeSpawned?.Invoke(cube);
     }
 
