@@ -8,6 +8,11 @@ public class CubesMover : MonoBehaviour
 
     private LinkedList<MoveOperation> _moveOperations = new LinkedList<MoveOperation>();
 
+    public void SetSettings(float speed, float distance){
+        foreach (MoveOperation operation in _moveOperations)
+            operation.SetSettings(speed, distance);
+    }
+
     public void AddCube(Cube cube, float speed, float distance){
         MoveOperation moveOperation = new MoveOperation(cube, speed, distance);
         moveOperation.Finished += OnOperationFinished;
@@ -15,9 +20,8 @@ public class CubesMover : MonoBehaviour
     }
 
     private void Update() {
-        foreach(MoveOperation operation in _moveOperations){
+        foreach(MoveOperation operation in _moveOperations)
             operation.Update();
-        }
 
         RemoveFinishedOperations();
     }
@@ -73,6 +77,11 @@ public class CubesMover : MonoBehaviour
                 IsFinished = true;
                 Finished?.Invoke(this);
             }
+        }
+
+        public void SetSettings(float speed, float distance){
+            _speed = speed;
+            _distance = distance;
         }
     }
 }

@@ -5,9 +5,8 @@ public class CubeSpawner : MonoBehaviour
     public event System.Action<Cube> CubeSpawned;
 
     [SerializeField] private GameObjectPool<Cube> objectPool;
-    [Space]
-    private float _spawnDelay;
 
+    private float _spawnDelay;
     private float _timeToNextSpawn;
 
     private void Update() {
