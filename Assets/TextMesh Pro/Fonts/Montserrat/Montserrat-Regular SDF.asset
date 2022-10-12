@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &-8441898849467944172
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Montserrat-Regular Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: UNDERLAY_ON
+  m_ValidKeywords:
+  - UNDERLAY_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,6 +41,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Ambient: 0.5
     - _Bevel: 0.5
@@ -120,7 +123,8 @@ MonoBehaviour:
   materialHashCode: -1542015459
   m_Version: 1.1.0
   m_SourceFontFileGUID: b6bcbbfd09520fc4e8f4d1f7c4dd99c0
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b6bcbbfd09520fc4e8f4d1f7c4dd99c0, type: 3}
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b6bcbbfd09520fc4e8f4d1f7c4dd99c0,
+    type: 3}
   m_SourceFontFile: {fileID: 12800000, guid: b6bcbbfd09520fc4e8f4d1f7c4dd99c0, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
@@ -1797,6 +1801,20 @@ MonoBehaviour:
       m_Height: 35
     m_Scale: 1
     m_AtlasIndex: 0
+  - m_Index: 1656
+    m_Metrics:
+      m_Width: 0
+      m_Height: 0
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 0
+      m_HorizontalAdvance: 0
+    m_GlyphRect:
+      m_X: 0
+      m_Y: 0
+      m_Width: 0
+      m_Height: 0
+    m_Scale: 1
+    m_AtlasIndex: 0
   - m_Index: 1661
     m_Metrics:
       m_Width: 46.890625
@@ -2387,6 +2405,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 1103
     m_GlyphIndex: 1334
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 8203
+    m_GlyphIndex: 1656
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 8226

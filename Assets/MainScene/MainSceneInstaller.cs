@@ -12,9 +12,11 @@ public class MainSceneInstaller : MonoBehaviour
     [Space]
     [SerializeField] private CubeSpawner cubeSpawner;
     [SerializeField] private CubesMover cubesMover;
+    [Space]
+    [SerializeField] private DistanceVisualizer distanceVisualizer;
 
     private void Awake() {
-        CubesPipelineViewModel cubesPipelineViewModel = new CubesPipelineViewModel(cubeSpawner, cubesMover);
+        CubesPipelineViewModel cubesPipelineViewModel = new CubesPipelineViewModel(cubeSpawner, cubesMover, distanceVisualizer);
         Inject(cubesPipelineViewModel, cubesPipelineViewModelUsers);
         // QuickGameViewModel quickGameViewModel = new QuickGameViewModel(quickGame);
         // Inject(quickGameViewModel, quickGameViewModelUsers);

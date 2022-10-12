@@ -15,7 +15,9 @@ public class PipelineSettingsPanel : MonoBehaviour, IInitializable<CubesPipeline
     }
 
     private void InitializeInputField(TMP_InputField inputField, ObservableProperty<float> viewModelProperty){
-        inputField.onValueChanged.AddListener((value) => viewModelProperty.Value = float.Parse(value));
         viewModelProperty.Value = float.Parse(inputField.text);
+        inputField.onValueChanged.AddListener((value) => {
+            viewModelProperty.Value = float.TryParse(value, out float result) ? result : 0;
+        });
     }
 }

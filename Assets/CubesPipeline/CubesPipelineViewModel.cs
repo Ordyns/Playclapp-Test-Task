@@ -8,10 +8,12 @@ public class CubesPipelineViewModel
     [Space]
     private CubeSpawner _cubeSpawner;
     private CubesMover _cubesMover;
+    private DistanceVisualizer _distanceVisualizer;
 
-    public CubesPipelineViewModel(CubeSpawner cubeSpawner, CubesMover cubesMover) {
+    public CubesPipelineViewModel(CubeSpawner cubeSpawner, CubesMover cubesMover, DistanceVisualizer distanceVisualizer) {
         _cubeSpawner = cubeSpawner;
         _cubesMover = cubesMover;
+        _distanceVisualizer = distanceVisualizer;
 
         UpdateCubeSpawnerSettings();
         cubeSpawner.CubeSpawned += OnCubeSpawned;
@@ -32,6 +34,12 @@ public class CubesPipelineViewModel
         _cubesMover.AddCube(cube, CubeSpeed.Value, CubeDistance.Value);
     }
 
-    private void UpdateCubesMoverSettings() => _cubesMover.SetSettings(CubeSpeed.Value, CubeDistance.Value);
-    private void UpdateCubeSpawnerSettings() => _cubeSpawner.SetSpawnDelay(SpawnDelay.Value);
+    private void UpdateCubesMoverSettings(){
+        _distanceVisualizer.SetDistance(CubeDistance.Value);
+        _cubesMover.SetSettings(CubeSpeed.Value, CubeDistance.Value);
+    }
+    private void UpdateCubeSpawnerSettings(){
+        _distanceVisualizer.SetDistance(CubeDistance.Value);
+        _cubeSpawner.SetSpawnDelay(SpawnDelay.Value);
+    }
 }

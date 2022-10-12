@@ -10,7 +10,7 @@ public class CubeSpawner : MonoBehaviour
     private float _timeToNextSpawn;
 
     private void Update() {
-        if(gameObject.activeSelf){
+        if(gameObject.activeSelf && _spawnDelay > 0){
             if(_timeToNextSpawn > 0){
                 _timeToNextSpawn -= Time.deltaTime;
             }
